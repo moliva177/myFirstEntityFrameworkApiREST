@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace PrimerApi.Migrations
 {
     /// <inheritdoc />
-    public partial class primeraMigracion : Migration
+    public partial class pcstartermigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -84,23 +84,23 @@ namespace PrimerApi.Migrations
                     Id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     CantidadPasajesros = table.Column<int>(type: "int", nullable: false),
                     Matricula = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Marca = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    IdMarca = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_aviones", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_aviones_marcas_aviones_Marca",
-                        column: x => x.Marca,
+                        name: "FK_aviones_marcas_aviones_IdMarca",
+                        column: x => x.IdMarca,
                         principalTable: "marcas_aviones",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_aviones_Marca",
+                name: "IX_aviones_IdMarca",
                 table: "aviones",
-                column: "Marca");
+                column: "IdMarca");
 
             migrationBuilder.CreateIndex(
                 name: "IX_personas_IdCategoria",

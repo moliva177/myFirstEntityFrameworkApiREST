@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Maximiliano Oliva\\Desktop\\Programacion3\\Clase 24-05\\PrimerApi\\PrimerApi\\PrimerApi.csproj": {}
+    "C:\\Users\\oliva\\Documents\\Estudios\\UTN\\PROGIII\\myFirstEntityFrameworkApiREST\\PrimerApi\\PrimerApi\\PrimerApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Maximiliano Oliva\\Desktop\\Programacion3\\Clase 24-05\\PrimerApi\\PrimerApi\\PrimerApi.csproj": {
+    "C:\\Users\\oliva\\Documents\\Estudios\\UTN\\PROGIII\\myFirstEntityFrameworkApiREST\\PrimerApi\\PrimerApi\\PrimerApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Maximiliano Oliva\\Desktop\\Programacion3\\Clase 24-05\\PrimerApi\\PrimerApi\\PrimerApi.csproj",
+        "projectUniqueName": "C:\\Users\\oliva\\Documents\\Estudios\\UTN\\PROGIII\\myFirstEntityFrameworkApiREST\\PrimerApi\\PrimerApi\\PrimerApi.csproj",
         "projectName": "PrimerApi",
-        "projectPath": "C:\\Users\\Maximiliano Oliva\\Desktop\\Programacion3\\Clase 24-05\\PrimerApi\\PrimerApi\\PrimerApi.csproj",
-        "packagesPath": "C:\\Users\\Maximiliano Oliva\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Maximiliano Oliva\\Desktop\\Programacion3\\Clase 24-05\\PrimerApi\\PrimerApi\\obj\\",
+        "projectPath": "C:\\Users\\oliva\\Documents\\Estudios\\UTN\\PROGIII\\myFirstEntityFrameworkApiREST\\PrimerApi\\PrimerApi\\PrimerApi.csproj",
+        "packagesPath": "C:\\Users\\oliva\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\oliva\\Documents\\Estudios\\UTN\\PROGIII\\myFirstEntityFrameworkApiREST\\PrimerApi\\PrimerApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Maximiliano Oliva\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\oliva\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

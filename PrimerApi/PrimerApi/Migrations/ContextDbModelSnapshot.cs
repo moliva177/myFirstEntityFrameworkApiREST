@@ -3,7 +3,6 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PrimerApi.Data;
 
@@ -12,11 +11,9 @@ using PrimerApi.Data;
 namespace PrimerApi.Migrations
 {
     [DbContext(typeof(ContextDb))]
-    [Migration("20240601003718_updateAvionColumn")]
-    partial class updateAvionColumn
+    partial class ContextDbModelSnapshot : ModelSnapshot
     {
-        /// <inheritdoc />
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,16 +34,13 @@ namespace PrimerApi.Migrations
                     b.Property<Guid>("IdMarca")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<Guid>("Marca")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Matricula")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Marca");
+                    b.HasIndex("IdMarca");
 
                     b.ToTable("aviones");
                 });
@@ -154,7 +148,7 @@ namespace PrimerApi.Migrations
                 {
                     b.HasOne("PrimerApi.Models.MarcaAvion", "MarcaAvion")
                         .WithMany()
-                        .HasForeignKey("Marca")
+                        .HasForeignKey("IdMarca")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

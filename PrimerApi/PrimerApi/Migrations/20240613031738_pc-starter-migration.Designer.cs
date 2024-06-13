@@ -12,8 +12,8 @@ using PrimerApi.Data;
 namespace PrimerApi.Migrations
 {
     [DbContext(typeof(ContextDb))]
-    [Migration("20240531232114_primeraMigracion")]
-    partial class primeraMigracion
+    [Migration("20240613031738_pc-starter-migration")]
+    partial class pcstartermigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -34,7 +34,7 @@ namespace PrimerApi.Migrations
                     b.Property<int>("CantidadPasajesros")
                         .HasColumnType("int");
 
-                    b.Property<Guid>("Marca")
+                    b.Property<Guid>("IdMarca")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Matricula")
@@ -43,7 +43,7 @@ namespace PrimerApi.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("Marca");
+                    b.HasIndex("IdMarca");
 
                     b.ToTable("aviones");
                 });
@@ -149,13 +149,13 @@ namespace PrimerApi.Migrations
 
             modelBuilder.Entity("PrimerApi.Models.Avion", b =>
                 {
-                    b.HasOne("PrimerApi.Models.MarcaAvion", "MMarcaAvion")
+                    b.HasOne("PrimerApi.Models.MarcaAvion", "MarcaAvion")
                         .WithMany()
-                        .HasForeignKey("Marca")
+                        .HasForeignKey("IdMarca")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("MMarcaAvion");
+                    b.Navigation("MarcaAvion");
                 });
 
             modelBuilder.Entity("PrimerApi.Models.Persona", b =>
