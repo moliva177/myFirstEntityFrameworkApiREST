@@ -1,7 +1,8 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using PrimerApi.Data;
-using PrimerApi.Interfaces;
 using PrimerApi.Interfaces.Services;
 using PrimerApi.Models;
 using PrimerApi.Query;
@@ -12,26 +13,23 @@ namespace PrimerApi.Controllers;
 public class UsuarioController : ControllerBase
 {
     private readonly ContextDb _contextDb;
-    private readonly IUsuarioRepository _usuarioRepository;
     private readonly IUsuarioService _usuarioService;
     
-    public UsuarioController(ContextDb contextoDb, IUsuarioRepository usuarioRepository,
-        IUsuarioService usuarioService)
+    public UsuarioController(ContextDb contextoDb, IUsuarioService usuarioService)
     {
         _contextDb = contextoDb;
-        _usuarioRepository = usuarioRepository;
         _usuarioService = usuarioService;
     }
 
-    [HttpGet("/usuarios/GetAll")]
+    [HttpGet("/usuarios/GetAll"), Authorize]
     public async Task<IActionResult> GetAll()
     {
         var usuarios = await _usuarioService.GetAll();
         return Ok(usuarios);
     }
     
-    [HttpGet("/usuarios/GetById/{id}")]
-    public async Task<IActionResult> GetById(int id)
+    [HttpGet("/usuarios/GetById/{id}"), Authorize]
+    public async Task<IActionResult> GetById([FromHeader] int id)
     {
         var usuarios = await _usuarioService.GetById(id);
         return Ok(usuarios);
@@ -64,7 +62,18 @@ public class UsuarioController : ControllerBase
         await _contextDb.AddAsync(usuarioNuevo);
         await _contextDb.SaveChangesAsync();
 
-        return Ok(usuarioNuevo);
-       
+        return Ok(usuarioNuevo);  
+    }
+
+    [HttpPost("/usuarios/login")]
+    public async Task<IActionResult> LoginUsuario([FromBody] LoginUsuarioQuery query)
+    {
+        if(string.IsNullOrWhiteSpace(query.Email) || string.IsNullOrWhiteSpace(query.NombreUsuario))
+        {
+            return BadRequest("Todos los campos son oblicatorios");
+        }
+
+        var result = await _usuarioService.LoginUsuario(query.NombreUsuario.Trim(), query.Email.Trim());
+        return Ok(result);
     }
 }

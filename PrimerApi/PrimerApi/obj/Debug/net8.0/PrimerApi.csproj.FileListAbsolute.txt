@@ -549,3 +549,4 @@ C:\Users\oliva\Documents\Estudios\UTN\PROGIII\myFirstEntityFrameworkApiREST\Prim
 C:\Users\oliva\Documents\Estudios\UTN\PROGIII\myFirstEntityFrameworkApiREST\PrimerApi\PrimerApi\obj\Debug\net8.0\PrimerApi.pdb
 C:\Users\oliva\Documents\Estudios\UTN\PROGIII\myFirstEntityFrameworkApiREST\PrimerApi\PrimerApi\obj\Debug\net8.0\PrimerApi.genruntimeconfig.cache
 C:\Users\oliva\Documents\Estudios\UTN\PROGIII\myFirstEntityFrameworkApiREST\PrimerApi\PrimerApi\obj\Debug\net8.0\ref\PrimerApi.dll
+C:\Users\oliva\Documents\Estudios\UTN\PROGIII\myFirstEntityFrameworkApiREST\PrimerApi\PrimerApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
