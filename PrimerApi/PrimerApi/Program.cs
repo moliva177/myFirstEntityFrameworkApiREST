@@ -26,6 +26,20 @@ builder.Services.AddSwaggerGen(options =>
         Name = "Authorization", //nombre del header que lo contiene
         Type = SecuritySchemeType.ApiKey
     });
+    options.AddSecurityRequirement(new OpenApiSecurityRequirement
+            {
+                {
+                    new OpenApiSecurityScheme
+                    {
+                        Reference = new OpenApiReference
+                        {
+                            Type = ReferenceType.SecurityScheme,
+                            Id = "oauth2"
+                        }
+                    },
+                    Array.Empty<string>()
+                }
+   });
 });
 
 //armo el contextDB
